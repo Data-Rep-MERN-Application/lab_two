@@ -84,13 +84,6 @@ export default function Header() {
 }
 ```
 
-**`src/components/Footer.jsx`:**
-
-```jsx
-export default function Footer() {
-  return <h3>My Footer in another component</h3>;
-}
-```
 
 **Update `src/App.jsx`:**
 
@@ -101,6 +94,7 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
+<>
     <div>
       <Header />
       <Content />
@@ -212,48 +206,44 @@ React Router enables "client side routing".
 **Modify `src/App.jsx` to conditionally render Header/Footer under Navbar:**
 
 ```jsx
-import { Routes, Route, useLocation } from 'react-router-dom'
-import NavigationBar from './components/NavigationBar.jsx'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Content from './components/Content.jsx'
 
-export default function App() {
-  const location = useLocation();
+import './App.css'
+import Content from './components/test'
+import Header from './components/Header'
+import { Nav, Navbar, Container } from 'react-bootstrap'
 
-  const showUnderNavbar =
-    location.pathname === '/read' ? <Footer /> :
-    location.pathname === '/create' ? <Header /> :
-    null;
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+function App() {
+
 
   return (
     <>
-      <NavigationBar />
-      {showUnderNavbar}
-      <Routes>
-        <Route path="/" element={<Content />} />
-        <Route path="/read" element={<h1>Read Component</h1>} />
-        <Route path="/create" element={<h1>Create Component</h1>} />
-      </Routes>
+      <Router>
+        <Navbar bg="primary" data-bs-theme="dark">
+          <Container>
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/read">Read</Nav.Link>
+              <Nav.Link href="/create">Create</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+        <Routes>
+          <Route path="/" element={<Content />} />
+          <Route path="/read" element={<Header />} />
+          <Route path="/create" element={<Content />} />
+        </Routes>
+      </Router>
     </>
-  );
+  )
 }
+
+export default App
+
 ```
 
 ---
-
-## Notes
-
-- Vite dev server runs at **http://localhost:5173**
-- Scripts in `package.json`:
-  ```json
-  {
-    "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
-    }
-  }
-  ```
 
 
