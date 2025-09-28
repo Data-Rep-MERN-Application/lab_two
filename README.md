@@ -1,5 +1,5 @@
 
-# Lab 2 (Vite Edition): Data Representation & Querying
+# Lab 2 : Data Representation & Querying
 
 ## Exercise 1: Setting up Git Repository
 
@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-👉 By default, the dev server runs at **http://localhost:5173** (not 3000).
+👉 By default, the dev server runs at **http://localhost:5173**.
 
 **Entry file (`src/main.jsx`):**
 
