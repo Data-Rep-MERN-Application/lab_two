@@ -96,14 +96,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 **Question:** Add a Navigation Bar component to your application using React Bootstrap. Ensure it has links for Home, Read, and Create pages.
 
 ````
-
----
-
-## Exercise 4: Navigation Bar and Routing
-
-**Install React Router:**
-
-```bash
 npm install react-router-dom
 ````
 
