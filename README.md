@@ -1,22 +1,6 @@
-
 # Lab 2 : Data Representation & Querying
 
-## Exercise 1: Setting up Git Repository
-
-**Create a Git Repository:**
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
-
----
-
-## Exercise 2: Creating and Modifying a React Application
+## Exercise 1: Creating and Modifying a React Application
 
 **Set Up React Application with Vite:**
 
@@ -27,7 +11,7 @@ npm install
 npm run dev
 ```
 
-👉 By default, the dev server runs at **http://localhost:5173**.
+👉 By default, the dev server runs at **[http://localhost:5173](http://localhost:5173)**.
 
 **Entry file (`src/main.jsx`):**
 
@@ -59,7 +43,7 @@ export default function App() {
 
 ---
 
-## Exercise 3: Componentization
+## Exercise 2: Componentization
 
 Create a `components/` folder in `src`.
 
@@ -84,30 +68,12 @@ export default function Header() {
 }
 ```
 
-
-**Update `src/App.jsx`:**
-
-```jsx
-import Header from './components/Header.jsx'
-import Content from './components/Content.jsx'
-import Footer from './components/Footer.jsx'
-
-export default function App() {
-  return (
-<>
-    <div>
-      <Header />
-      <Content />
-      <Footer />
-    </div>
-</>
-  );
-}
-```
+**Question:**
+Create a new component called `Footer.jsx` inside the `components/` folder. This component should hold footer information for your app (e.g., your name, copyright, or any message). Then update `App.jsx` so that it renders the `Footer` component below the `Content` component.
 
 ---
 
-## Exercise 4: Adding Bootstrap
+## Exercise 3: Adding Bootstrap
 
 **Install Bootstrap:**
 
@@ -121,15 +87,25 @@ npm install react-bootstrap bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
+**Question:** Add a Navigation Bar component to your application using React Bootstrap. Ensure it has links for Home, Read, and Create pages.
+
 ---
 
-## Exercise 5: Navigation Bar and Routing
+## Exercise 4: Adding a Navigation Bar
+
+**Question:** Add a Navigation Bar component to your application using React Bootstrap. Ensure it has links for Home, Read, and Create pages.
+
+````
+
+---
+
+## Exercise 4: Navigation Bar and Routing
 
 **Install React Router:**
 
 ```bash
 npm install react-router-dom
-```
+````
 
 **`src/components/NavigationBar.jsx`:**
 
@@ -199,14 +175,13 @@ export default function App() {
 
 ---
 
-## Exercise 6: Client Side Routing
+## Exercise 5: Client Side Routing
 
 React Router enables "client side routing".
 
 **Modify `src/App.jsx` to conditionally render Header/Footer under Navbar:**
 
 ```jsx
-
 import './App.css'
 import Content from './components/test'
 import Header from './components/Header'
@@ -215,8 +190,6 @@ import { Nav, Navbar, Container } from 'react-bootstrap'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
-
-
   return (
     <>
       <Router>
@@ -241,9 +214,19 @@ function App() {
 }
 
 export default App
-
 ```
 
 ---
 
+## Exercise 6: Setting up Git Repository
 
+**Create a Git Repository:**
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <your-github-repo-url>
+git push -u origin main
+```
