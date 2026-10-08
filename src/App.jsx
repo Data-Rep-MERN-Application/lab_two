@@ -6,20 +6,20 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
 
 <Navbar bg="primary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/header">Header</Nav.Link>
-            <Nav.Link href="/footer">Footer</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/header">Header</Nav.Link>
+            <Nav.Link as={Link} to="/footer">Footer</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
